@@ -1,0 +1,7 @@
+{
+  "name": "beautify摄影德阳店",
+  "description": "A premium photography portfolio mini-program for beautify studio featuring curated collections, style categories, and high-definition photo viewing.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
