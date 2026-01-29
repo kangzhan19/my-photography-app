@@ -24,8 +24,8 @@ export const CATEGORIES: Category[] = [
 export const DEFAULT_ALBUMS: Album[] = [
   {
     id: 'a1',
-    title: '光影美学 · 极简肖像',
-    categoryId: '5', // 已移动到“光影肖像”分类
+    title: '墨染花颜',
+    categoryId: '5', // 光影肖像分类
     coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/d%20%285%29.jpg',
     photos: [
       { id: 'p1-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/d%20%281%29.jpg' },
