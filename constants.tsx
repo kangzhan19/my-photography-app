@@ -4,13 +4,18 @@ import { Category, Album } from './types';
 
 export const CATEGORIES: Category[] = [
   { id: '1', name: '全部作品' },
-  { id: '2', name: '纯净证件' },
-  { id: '3', name: '复古油画' },
-  { id: '4', name: '极简肖像' },
-  { id: '5', name: '情绪写真' },
-  { id: '6', name: '法式浪漫' },
-  { id: '7', name: '男士质感' },
-  { id: '8', name: '生日贺卡' },
+  { id: '2', name: '纯漾轻欲' },
+  { id: '3', name: '星芒定格' },
+  { id: '4', name: '古意清欢' },
+  { id: '5', name: '光影肖像' },
+  { id: '6', name: '花漾生日' },
+  { id: '7', name: '繁花映颜' },
+  { id: '8', name: '国潮新韵' },
+  { id: '9', name: '潮拍正燃' },
+  { id: '10', name: '纯净证件' },
+  { id: '11', name: '男士质感' },
+  { id: '12', name: '星河共赴' },
+  { id: '13', name: '岁月留声' },
 ];
 
 const generatePhotos = (seed: string, count: number) => 
@@ -22,31 +27,31 @@ const generatePhotos = (seed: string, count: number) =>
 export const DEFAULT_ALBUMS: Album[] = [
   {
     id: 'a1',
-    title: 'BEAUTIFY · 极简主义',
-    categoryId: '4',
-    coverUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800',
-    photos: generatePhotos('portrait', 6)
+    title: '墨染花颜',
+    categoryId: '7', // 归类到：繁花映颜
+    coverUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800',
+    photos: generatePhotos('portrait-mo', 5)
   },
   {
     id: 'a2',
     title: '赫本风复古系列',
-    categoryId: '3',
+    categoryId: '4', // 归类到：古意清欢
     coverUrl: 'https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=800',
-    photos: generatePhotos('retro', 8)
+    photos: generatePhotos('retro-clown', 8)
   },
   {
     id: 'a3',
     title: '2025 春季 · 氧气写真',
-    categoryId: '5',
+    categoryId: '2', // 归类到：纯漾轻欲
     coverUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800',
-    photos: generatePhotos('fresh', 5)
+    photos: generatePhotos('spring-oxy', 5)
   },
   {
     id: 'a4',
-    title: '法式浪漫 · 塞纳河畔',
-    categoryId: '6',
+    title: '质感男士 · 纯净格调',
+    categoryId: '11', // 归类到：男士质感
     coverUrl: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800',
-    photos: generatePhotos('france', 4)
+    photos: generatePhotos('france-river', 4)
   }
 ];
 

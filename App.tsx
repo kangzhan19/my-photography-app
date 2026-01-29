@@ -8,7 +8,7 @@ import TabBar from './components/TabBar';
 import { ViewType, Album } from './types';
 import { DEFAULT_ALBUMS } from './constants';
 
-const LOCAL_STORAGE_KEY = 'BEAUTIFY_ALBUMS_V2';
+const LOCAL_STORAGE_KEY = 'BEAUTIFY_ALBUMS_V4'; // 强制刷新到 V4 版本
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ViewType>('HOME');
