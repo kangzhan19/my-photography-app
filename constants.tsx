@@ -51,7 +51,7 @@ export const DEFAULT_ALBUMS: Album[] = [
   {
     id: 'a3',
     title: '红伶织影',
-    categoryId: '5', // 移至光影肖像分类
+    categoryId: '5', // 光影肖像分类
     coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/g%20%283%29.jpg',
     photos: [
       { id: 'p3-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/g%20%286%29.jpg' },
@@ -85,6 +85,32 @@ export const DEFAULT_ALBUMS: Album[] = [
       { id: 'p5-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/4%20%285%29.jpg' },
       { id: 'p5-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/4%20%286%29.jpg' }
     ]
+  },
+  {
+    id: 'a6',
+    title: '暖房星愿',
+    categoryId: '2', // 纯漾轻欲
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/5%20%281%29.jpg',
+    photos: [
+      { id: 'p6-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/5%20%282%29.jpg' },
+      { id: 'p6-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/5%20%281%29.jpg' },
+      { id: 'p6-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/5%20%283%29.jpg' },
+      { id: 'p6-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/5%20%286%29.jpg' },
+      { id: 'p6-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/5%20%285%29.jpg' }
+    ]
+  },
+  {
+    id: 'a7',
+    title: '黑焰御姐',
+    categoryId: '3', // 星芒定格
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/1%20%2810%29.jpg',
+    photos: [
+      { id: 'p7-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/1%20%2810%29.jpg' },
+      { id: 'p7-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/1%20%2811%29.jpg' },
+      { id: 'p7-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/1%20%2815%29.jpg' },
+      { id: 'p7-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/1%20%2816%29.jpg' },
+      { id: 'p7-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/1%20%2817%29.jpg' }
+    ]
   }
 ];
 
@@ -106,7 +132,7 @@ export const ICONS = {
   ),
   SHARE: (
     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.244 2.077a2.25 2.244 2.077 0 00-3.935-2.186zm0-12.814a2.25 2.244 2.077a2.25 2.244 2.077 0 00-3.933 2.185z" />
     </svg>
   ),
   PLUS: (
@@ -116,7 +142,7 @@ export const ICONS = {
   ),
   DELETE: (
     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.244 2.077H8.084a2.25 2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.244 2.077 0 00-10.076 0L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
     </svg>
   )
 };

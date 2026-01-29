@@ -6,16 +6,19 @@ import AlbumDetailPage from './components/AlbumDetailPage';
 import AdminPage from './components/AdminPage';
 import TabBar from './components/TabBar';
 import { ViewType, Album } from './types';
-import { DEFAULT_ALBUMS } from './constants';
+import { DEFAULT_ALBUMS, CATEGORIES } from './constants';
 
-// 更新版本后缀以强制同步代码中的最新 DEFAULT_ALBUMS (V15)
-const LOCAL_STORAGE_KEY = 'BEAUTIFY_ALBUMS_V15_STABLE_CODE';
+// 更新版本后缀以强制同步代码中的最新 DEFAULT_ALBUMS (V20)
+const LOCAL_STORAGE_KEY = 'BEAUTIFY_ALBUMS_V20_STABLE_CODE';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ViewType>('HOME');
   const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
   const [albums, setAlbums] = useState<Album[]>([]);
   const [showAdmin, setShowAdmin] = useState(false);
+  
+  // 将分类 ID 提升到这里，实现状态持久化
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(CATEGORIES[0].id);
 
   useEffect(() => {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -76,7 +79,14 @@ const App: React.FC = () => {
         ) : (
           <div className="transition-all duration-500 h-full">
             {activeTab === 'HOME' && <HomePage onSecretEntry={enterAdminMode} onExplore={() => setActiveTab('GALLERY')} />}
-            {activeTab === 'GALLERY' && <GalleryPage albums={albums} onAlbumClick={handleAlbumSelect} />}
+            {activeTab === 'GALLERY' && (
+              <GalleryPage 
+                albums={albums} 
+                onAlbumClick={handleAlbumSelect} 
+                selectedCategoryId={selectedCategoryId}
+                onCategoryChange={setSelectedCategoryId}
+              />
+            )}
           </div>
         )}
       </main>
