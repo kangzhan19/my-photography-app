@@ -18,40 +18,58 @@ export const CATEGORIES: Category[] = [
   { id: '13', name: '岁月留声' },
 ];
 
-const generatePhotos = (seed: string, count: number) => 
+const generatePhotos = (keyword: string, count: number) => 
   Array.from({ length: count }).map((_, i) => ({
-    id: `${seed}-${i}`,
-    url: `https://picsum.photos/seed/${seed}-${i}/1200/1800`
+    id: `p-${keyword}-${i}`,
+    url: `https://images.unsplash.com/photo-${keyword === 'id' ? '1506794778202-cad84cf45f1d' : '1531746020798-e6953c6e8e04'}?q=80&w=1200&auto=format&fit=crop`
   }));
 
 export const DEFAULT_ALBUMS: Album[] = [
   {
     id: 'a1',
-    title: '墨染花颜',
-    categoryId: '7', // 归类到：繁花映颜
+    title: '白夜森林 · 纯净写真',
+    categoryId: '2', // 纯漾轻欲
     coverUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800',
-    photos: generatePhotos('portrait-mo', 5)
+    photos: [
+      { id: 'p1-1', url: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200' },
+      { id: 'p1-2', url: 'https://images.unsplash.com/photo-1529139513402-f20a02ad4d5e?q=80&w=1200' }
+    ]
   },
   {
     id: 'a2',
-    title: '赫本风复古系列',
-    categoryId: '4', // 归类到：古意清欢
+    title: '赫本往事 · 复古胶片',
+    categoryId: '4', // 古意清欢
     coverUrl: 'https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=800',
-    photos: generatePhotos('retro-clown', 8)
+    photos: [
+      { id: 'p2-1', url: 'https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=1200' }
+    ]
   },
   {
     id: 'a3',
-    title: '2025 春季 · 氧气写真',
-    categoryId: '2', // 归类到：纯漾轻欲
-    coverUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800',
-    photos: generatePhotos('spring-oxy', 5)
+    title: '光影裁缝 · 极简肖像',
+    categoryId: '5', // 光影肖像
+    coverUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800',
+    photos: [
+      { id: 'p3-1', url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200' }
+    ]
   },
   {
     id: 'a4',
-    title: '质感男士 · 纯净格调',
-    categoryId: '11', // 归类到：男士质感
-    coverUrl: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800',
-    photos: generatePhotos('france-river', 4)
+    title: '绅士格调 · 商务质感',
+    categoryId: '11', // 男士质感
+    coverUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800',
+    photos: [
+      { id: 'p4-1', url: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200' }
+    ]
+  },
+  {
+    id: 'a5',
+    title: '繁花系列 · 春日序曲',
+    categoryId: '7', // 繁花映颜
+    coverUrl: 'https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=800',
+    photos: [
+      { id: 'p5-1', url: 'https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=1200' }
+    ]
   }
 ];
 
