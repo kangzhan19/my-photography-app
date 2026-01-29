@@ -111,6 +111,44 @@ export const DEFAULT_ALBUMS: Album[] = [
       { id: 'p7-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/1%20%2816%29.jpg' },
       { id: 'p7-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/1%20%2817%29.jpg' }
     ]
+  },
+  {
+    id: 'a8',
+    title: '夜影珠光',
+    categoryId: '3', // 星芒定格
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/2%20%285%29.jpg',
+    photos: [
+      { id: 'p8-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/2%20%285%29.jpg' },
+      { id: 'p8-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/2%20%283%29.jpg' },
+      { id: 'p8-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/2%20%286%29.jpg' },
+      { id: 'p8-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/2%20%288%29.jpg' },
+      { id: 'p8-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/2%20%289%29.jpg' }
+    ]
+  },
+  {
+    id: 'a9',
+    title: '甜份满格',
+    categoryId: '6', // 花漾生日
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/6%20%283%29.jpg',
+    photos: [
+      { id: 'p9-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/6%20%283%29.jpg' },
+      { id: 'p9-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/6%20%284%29.jpg' },
+      { id: 'p9-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/6%20%285%29.jpg' },
+      { id: 'p9-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/6%20%287%29.jpg' }
+    ]
+  },
+  {
+    id: 'a10',
+    title: '甜焙小厨',
+    categoryId: '6', // 花漾生日
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/7%20%281%29.jpg',
+    photos: [
+      { id: 'p10-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/7%20%281%29.jpg' },
+      { id: 'p10-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/7%20%283%29.jpg' },
+      { id: 'p10-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/7%20%284%29.jpg' },
+      { id: 'p10-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/7%20%286%29.jpg' },
+      { id: 'p10-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/7%20%287%29.jpg' }
+    ]
   }
 ];
 
@@ -132,7 +170,7 @@ export const ICONS = {
   ),
   SHARE: (
     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.244 2.077a2.25 2.244 2.077 0 00-3.935-2.186zm0-12.814a2.25 2.244 2.077a2.25 2.244 2.077 0 00-3.933 2.185z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.217 10.907a2.25 2.244 2.077a2.25 2.244 2.077 0 00-3.935-2.186zm0-12.814a2.25 2.244 2.077a2.25 2.244 2.077 0 00-3.933 2.185z" />
     </svg>
   ),
   PLUS: (
