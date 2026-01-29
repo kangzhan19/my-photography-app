@@ -8,7 +8,7 @@ import TabBar from './components/TabBar';
 import { ViewType, Album } from './types';
 import { DEFAULT_ALBUMS } from './constants';
 
-const LOCAL_STORAGE_KEY = 'BEAUTIFY_ALBUMS_V1';
+const LOCAL_STORAGE_KEY = 'BEAUTIFY_ALBUMS_V2';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ViewType>('HOME');
@@ -16,7 +16,6 @@ const App: React.FC = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [showAdmin, setShowAdmin] = useState(false);
 
-  // Load albums from localStorage or default
   useEffect(() => {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (saved) {
@@ -34,6 +33,7 @@ const App: React.FC = () => {
     setActiveTab(tab);
     setSelectedAlbum(null);
     setShowAdmin(false);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const handleAlbumSelect = (album: Album) => {
@@ -50,9 +50,8 @@ const App: React.FC = () => {
   };
 
   const handleReset = () => {
-    if (confirm('确定要恢复默认设置吗？所有修改将丢失。')) {
+    if (confirm('确定要恢复默认设置吗？')) {
       handleUpdateAlbums(DEFAULT_ALBUMS);
-      alert('已重置');
     }
   };
 
@@ -67,17 +66,17 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto min-h-screen relative shadow-2xl bg-white flex flex-col hide-scrollbar">
+    <div className="max-w-md mx-auto min-h-screen relative bg-white flex flex-col hide-scrollbar selection:bg-black selection:text-white">
       <main className="flex-1">
         {selectedAlbum ? (
           <AlbumDetailPage album={selectedAlbum} onBack={handleBack} />
         ) : showAdmin ? (
           <AdminPage albums={albums} onUpdateAlbums={handleUpdateAlbums} onReset={handleReset} onExit={exitAdminMode} />
         ) : (
-          <>
-            {activeTab === 'HOME' && <HomePage onSecretEntry={enterAdminMode} />}
+          <div className="transition-all duration-500">
+            {activeTab === 'HOME' && <HomePage onSecretEntry={enterAdminMode} onExplore={() => setActiveTab('GALLERY')} />}
             {activeTab === 'GALLERY' && <GalleryPage albums={albums} onAlbumClick={handleAlbumSelect} />}
-          </>
+          </div>
         )}
       </main>
 

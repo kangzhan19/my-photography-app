@@ -18,64 +18,77 @@ const GalleryPage: React.FC<GalleryPageProps> = ({ albums, onAlbumClick }) => {
 
   return (
     <div className="flex h-screen bg-white pb-16 overflow-hidden">
-      {/* Sidebar Navigation */}
-      <div className="w-20 flex-shrink-0 bg-[#fafafa] border-r border-gray-50 flex flex-col pt-8">
+      {/* Sidebar Navigation - Classic WeChat Style */}
+      <div className="w-[88px] flex-shrink-0 bg-[#F7F7F7] border-r border-gray-100 flex flex-col pt-8">
         <div className="flex-1 overflow-y-auto hide-scrollbar">
           {CATEGORIES.map(cat => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategoryId(cat.id)}
-              className={`w-full py-6 text-[12px] text-center relative transition-all ${
+              className={`w-full py-5 text-center transition-all duration-300 relative ${
                 selectedCategoryId === cat.id 
-                  ? 'text-black font-bold' 
-                  : 'text-gray-400'
+                  ? 'bg-white text-black font-medium' 
+                  : 'text-gray-400 font-light'
               }`}
             >
               {selectedCategoryId === cat.id && (
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-black rounded-r-full"></div>
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 bg-black"></div>
               )}
-              <span className="[writing-mode:vertical-rl] tracking-[0.3em]">{cat.name}</span>
+              <span className="text-[12px] [writing-mode:vertical-rl] tracking-[0.2em]">{cat.name}</span>
             </button>
           ))}
         </div>
       </div>
 
-      {/* Album Grid */}
-      <div className="flex-1 overflow-y-auto px-5 pt-8 bg-white">
-        <header className="mb-8 flex justify-between items-end">
-          <div>
-            <h2 className="text-xl font-light tracking-[0.2em] text-black">精选作品集</h2>
-            <p className="text-[9px] text-gray-300 tracking-wider mt-1 uppercase">Selected Portfolio</p>
-          </div>
-          <span className="text-[9px] text-gray-300 font-mono">{filteredAlbums.length} COLLECTIONS</span>
+      {/* Main Content Area */}
+      <div className="flex-1 flex flex-col bg-white">
+        <header className="px-6 py-6 border-b border-gray-50 flex justify-between items-center bg-white/80 backdrop-blur-md">
+          <h2 className="text-[15px] font-medium tracking-[0.1em] text-black">
+            {CATEGORIES.find(c => c.id === selectedCategoryId)?.name}
+          </h2>
+          <span className="text-[10px] text-gray-300 font-mono tracking-tighter">
+            {filteredAlbums.length.toString().padStart(2, '0')} SERIES
+          </span>
         </header>
 
-        <div className="grid grid-cols-2 gap-x-4 gap-y-8 pb-24">
-          {filteredAlbums.map(album => (
-            <div 
-              key={album.id} 
-              onClick={() => onAlbumClick(album)}
-              className="group cursor-pointer"
-            >
-              <div className="relative aspect-[3/4] rounded-[2px] overflow-hidden bg-gray-50">
-                <img 
-                  src={album.coverUrl} 
-                  alt={album.title} 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/0 group-active:bg-black/5 transition-colors"></div>
+        <div className="flex-1 overflow-y-auto px-4 py-6 scroll-smooth">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-8 pb-32">
+            {filteredAlbums.map((album, idx) => (
+              <div 
+                key={album.id} 
+                onClick={() => onAlbumClick(album)}
+                className={`group cursor-pointer transform transition-all duration-700 animate-fade-in`}
+                style={{ animationDelay: `${idx * 100}ms` }}
+              >
+                <div className="relative aspect-[3/4] overflow-hidden bg-gray-50 shadow-sm border border-gray-50">
+                  <img 
+                    src={album.coverUrl} 
+                    alt={album.title} 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  {/* Subtle Watermark */}
+                  <div className="absolute bottom-2 right-2 text-[6px] text-white/30 uppercase tracking-[0.2em]">Beautify Studio</div>
+                </div>
+                <div className="mt-3 space-y-1">
+                  <h3 className="text-[11px] font-normal text-gray-800 truncate tracking-wide">
+                    {album.title}
+                  </h3>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1 h-1 rounded-full bg-gray-200"></div>
+                    <span className="text-[8px] text-gray-300 uppercase tracking-widest">{album.photos.length} Photos</span>
+                  </div>
+                </div>
               </div>
-              <h3 className="mt-3 text-[11px] font-normal text-gray-700 truncate px-0.5 tracking-wider">
-                {album.title}
-              </h3>
-            </div>
-          ))}
-          {filteredAlbums.length === 0 && (
-            <div className="col-span-2 py-32 text-center">
-              <p className="text-xs text-gray-200 tracking-widest">暂无作品，敬请期待</p>
-            </div>
-          )}
+            ))}
+            
+            {filteredAlbums.length === 0 && (
+              <div className="col-span-2 py-40 flex flex-col items-center justify-center opacity-20">
+                <div className="w-10 h-[1px] bg-black mb-4"></div>
+                <p className="text-[10px] tracking-[0.5em] text-black">COMING SOON</p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
