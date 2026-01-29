@@ -8,7 +8,8 @@ import TabBar from './components/TabBar';
 import { ViewType, Album } from './types';
 import { DEFAULT_ALBUMS } from './constants';
 
-const LOCAL_STORAGE_KEY = 'BEAUTIFY_ALBUMS_V5'; // 升级到 V5 以强制同步
+// 更新版本后缀以强制同步代码中的最新 DEFAULT_ALBUMS
+const LOCAL_STORAGE_KEY = 'BEAUTIFY_ALBUMS_V5_STABLE_CODE';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ViewType>('HOME');
@@ -50,7 +51,7 @@ const App: React.FC = () => {
   };
 
   const handleReset = () => {
-    if (confirm('确定要恢复默认设置吗？')) {
+    if (confirm('确定要恢复初始设置吗？这会清除所有手动修改的内容。')) {
       handleUpdateAlbums(DEFAULT_ALBUMS);
     }
   };
@@ -66,14 +67,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto min-h-screen relative bg-white flex flex-col hide-scrollbar selection:bg-black selection:text-white">
+    <div className="max-w-md mx-auto min-h-screen relative bg-white flex flex-col hide-scrollbar selection:bg-black selection:text-white shadow-2xl">
       <main className="flex-1">
         {selectedAlbum ? (
           <AlbumDetailPage album={selectedAlbum} onBack={handleBack} />
         ) : showAdmin ? (
           <AdminPage albums={albums} onUpdateAlbums={handleUpdateAlbums} onReset={handleReset} onExit={exitAdminMode} />
         ) : (
-          <div className="transition-all duration-500">
+          <div className="transition-all duration-500 h-full">
             {activeTab === 'HOME' && <HomePage onSecretEntry={enterAdminMode} onExplore={() => setActiveTab('GALLERY')} />}
             {activeTab === 'GALLERY' && <GalleryPage albums={albums} onAlbumClick={handleAlbumSelect} />}
           </div>
