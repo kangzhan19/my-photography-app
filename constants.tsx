@@ -37,39 +37,53 @@ export const DEFAULT_ALBUMS: Album[] = [
   },
   {
     id: 'a2',
-    title: '赫本往事 · 古意清欢',
-    categoryId: '4',
-    coverUrl: 'https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=800',
+    title: '赤焰花影',
+    categoryId: '5', // 光影肖像
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/f%20%287%29.jpg',
     photos: [
-      { id: 'p2-1', url: 'https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=1200' },
-      { id: 'p2-2', url: 'https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=1200' }
+      { id: 'p2-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/f%20%283%29.jpg' },
+      { id: 'p2-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/f%20%285%29.jpg' },
+      { id: 'p2-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/f%20%286%29.jpg' },
+      { id: 'p2-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/f%20%287%29.jpg' },
+      { id: 'p2-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/f%20%288%29.jpg' }
     ]
   },
   {
     id: 'a3',
-    title: '质感男士 · 肖像格调',
-    categoryId: '11',
-    coverUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800',
+    title: '红伶织影',
+    categoryId: '5', // 移至光影肖像分类
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/g%20%283%29.jpg',
     photos: [
-      { id: 'p3-1', url: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200' }
+      { id: 'p3-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/g%20%286%29.jpg' },
+      { id: 'p3-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/g%20%283%29.jpg' },
+      { id: 'p3-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/g%20%282%29.jpg' },
+      { id: 'p3-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/%E8%82%96%E5%83%8F/g%20%281%29.jpg' }
     ]
   },
   {
     id: 'a4',
-    title: '繁花映颜 · 春日序曲',
-    categoryId: '7',
-    coverUrl: 'https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=800',
+    title: '薄荷微光',
+    categoryId: '2', // 纯漾轻欲
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/3%20%284%29.jpg',
     photos: [
-      { id: 'p4-1', url: 'https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=1200' }
+      { id: 'p4-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/3%20%286%29.jpg' },
+      { id: 'p4-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/3%20%284%29.jpg' },
+      { id: 'p4-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/3%20%283%29.jpg' },
+      { id: 'p4-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/3%20%282%29.jpg' },
+      { id: 'p4-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/3%20%281%29.jpg' }
     ]
   },
   {
     id: 'a5',
-    title: '纯净证件照 · 记录真实',
-    categoryId: '10',
-    coverUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800',
+    title: '冰蓝幻翼',
+    categoryId: '2', // 纯漾轻欲
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/4%20%281%29.jpg',
     photos: [
-      { id: 'p5-1', url: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200' }
+      { id: 'p5-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/4%20%281%29.jpg' },
+      { id: 'p5-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/4%20%282%29.jpg' },
+      { id: 'p5-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/4%20%283%29.jpg' },
+      { id: 'p5-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/4%20%285%29.jpg' },
+      { id: 'p5-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/4%20%286%29.jpg' }
     ]
   }
 ];
@@ -102,7 +116,7 @@ export const ICONS = {
   ),
   DELETE: (
     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.244 2.077H8.084a2.25 2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
     </svg>
   )
 };

@@ -71,12 +71,6 @@ const AdminPage: React.FC<AdminPageProps> = ({ albums, onUpdateAlbums, onReset, 
           </button>
           <h1 className="text-2xl font-serif tracking-tight text-gray-900">内容管理</h1>
         </div>
-        <button 
-          onClick={onReset}
-          className="text-[10px] text-gray-400 border border-gray-200 px-3 py-1.5 rounded-full"
-        >
-          重置默认
-        </button>
       </div>
 
       {!editingAlbum ? (
@@ -112,12 +106,21 @@ const AdminPage: React.FC<AdminPageProps> = ({ albums, onUpdateAlbums, onReset, 
               </div>
             ))}
           </div>
+          
+          <div className="pt-4 pb-10 flex justify-center">
+            <button 
+              onClick={onReset}
+              className="text-[9px] text-gray-300 uppercase tracking-[0.2em] border-b border-gray-100 pb-1"
+            >
+              Reset to Factory Defaults
+            </button>
+          </div>
         </div>
       ) : (
         <div className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 animate-fade-in">
           <div className="flex justify-between items-center mb-6">
             <h2 className="font-serif italic text-lg">编辑作品集</h2>
-            <button onClick={() => setEditingAlbum(null)} className="text-gray-400">×</button>
+            <button onClick={() => setEditingAlbum(null)} className="text-gray-400 text-2xl">&times;</button>
           </div>
           
           <form onSubmit={handleSaveEdit} className="space-y-5">
@@ -127,7 +130,7 @@ const AdminPage: React.FC<AdminPageProps> = ({ albums, onUpdateAlbums, onReset, 
                 type="text" 
                 value={editingAlbum.title}
                 onChange={e => setEditingAlbum({...editingAlbum, title: e.target.value})}
-                className="w-full bg-gray-50 border-none rounded-2xl p-4 text-sm"
+                className="w-full bg-gray-50 border-none rounded-2xl p-4 text-sm focus:ring-1 focus:ring-black"
               />
             </div>
             
@@ -138,7 +141,7 @@ const AdminPage: React.FC<AdminPageProps> = ({ albums, onUpdateAlbums, onReset, 
                     type="text" 
                     value={editingAlbum.coverUrl}
                     onChange={e => setEditingAlbum({...editingAlbum, coverUrl: e.target.value})}
-                    className="w-full bg-gray-50 border-none rounded-2xl p-4 text-xs font-mono"
+                    className="w-full bg-gray-50 border-none rounded-2xl p-4 text-xs font-mono focus:ring-1 focus:ring-black"
                   />
                 </div>
                 <div>
@@ -146,7 +149,7 @@ const AdminPage: React.FC<AdminPageProps> = ({ albums, onUpdateAlbums, onReset, 
                   <select 
                     value={editingAlbum.categoryId}
                     onChange={e => setEditingAlbum({...editingAlbum, categoryId: e.target.value})}
-                    className="w-full bg-gray-50 border-none rounded-2xl p-4 text-xs"
+                    className="w-full bg-gray-50 border-none rounded-2xl p-4 text-xs focus:ring-1 focus:ring-black"
                   >
                     {CATEGORIES.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
                   </select>
@@ -160,7 +163,7 @@ const AdminPage: React.FC<AdminPageProps> = ({ albums, onUpdateAlbums, onReset, 
                 value={bulkUrls}
                 onChange={e => setBulkUrls(e.target.value)}
                 rows={4}
-                className="w-full bg-gray-50 border-none rounded-2xl p-4 text-xs font-mono"
+                className="w-full bg-gray-50 border-none rounded-2xl p-4 text-xs font-mono focus:ring-1 focus:ring-black"
               />
             </div>
 
