@@ -23,85 +23,95 @@ const HomePage: React.FC<HomePageProps> = ({ onSecretEntry, onExplore }) => {
 
   return (
     <div className="relative h-screen w-full bg-[#f9f9f9] overflow-hidden flex flex-col font-sans text-[#1a1a1a]">
-      {/* Subtle Grid Overlay - Like Architect Paper */}
+      {/* Subtle Grid Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`, backgroundSize: '40px 40px' }}></div>
 
-      {/* Top Navigation / Branding */}
+      {/* Top Branding */}
       <div className="relative z-20 pt-14 px-8 flex justify-between items-baseline">
         <div className="flex flex-col gap-1">
           <h1 
             onClick={handleSecretTrigger}
-            className="text-[13px] tracking-[0.8em] font-light uppercase"
+            className="text-[13px] tracking-[0.8em] font-light uppercase active:opacity-50 transition-opacity"
           >
             BEAUTIFY
           </h1>
           <div className="w-8 h-[1px] bg-black/10 mt-1"></div>
         </div>
         <div className="text-right">
-          <span className="text-[9px] tracking-[0.3em] font-light text-black/30 uppercase italic">Est. 2018</span>
+          <span className="text-[9px] tracking-[0.3em] font-light text-black/30 uppercase italic">Since 2018</span>
         </div>
       </div>
 
       {/* Main Exhibition Area */}
       <div className="relative flex-1 flex flex-col items-center justify-center px-8">
-        {/* The "Frame" */}
-        <div className="relative w-full max-w-[300px] aspect-[3/4] group">
-          {/* External Border Decor */}
+        <div className="relative w-full max-w-[280px] aspect-[3/4] group">
           <div className="absolute -inset-4 border border-black/[0.03] pointer-events-none"></div>
-          <div className="absolute -inset-px border border-black/5 pointer-events-none"></div>
-          
-          {/* The Image */}
-          <div className="w-full h-full overflow-hidden bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+          <div className="w-full h-full overflow-hidden bg-white shadow-[0_30px_60px_rgba(0,0,0,0.06)] border border-black/5">
             <img 
               src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop" 
-              alt="Artistic Photography" 
-              className="w-full h-full object-cover transition-transform duration-[6000ms] ease-out group-hover:scale-110"
+              alt="Cover Photo" 
+              className="w-full h-full object-cover animate-[subtleBreath_10s_ease-in-out_infinite_alternate]"
             />
           </div>
+          <style>{`
+            @keyframes subtleBreath {
+              from { transform: scale(1.05); }
+              to { transform: scale(1); }
+            }
+          `}</style>
 
-          {/* Label Style Caption */}
-          <div className="absolute -bottom-16 left-0 right-0 flex flex-col items-center">
-            <h2 className="text-[14px] font-serif tracking-[0.5em] text-black/80">瞬间的永恒</h2>
-            <p className="text-[8px] tracking-[0.2em] text-black/20 mt-2 uppercase">Series 01 / Minimalist Portrait</p>
+          <div className="absolute -bottom-14 left-0 right-0 flex flex-col items-center">
+            <h2 className="text-[14px] font-serif tracking-[0.4em] text-black/80">瞬间的永恒</h2>
+            <p className="text-[8px] tracking-[0.2em] text-black/20 mt-2 uppercase">Series 01 / Minimalist</p>
           </div>
         </div>
       </div>
 
-      {/* Middle Spacer with delicate line */}
-      <div className="relative h-20 flex justify-center items-center">
-         <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-black/10 to-transparent"></div>
-      </div>
-
-      {/* Bottom Action Area */}
-      <div className="relative z-20 pb-20 px-10">
-        <div className="flex flex-col items-center">
-          <button 
-            onClick={onExplore}
-            className="group relative px-12 py-4 overflow-hidden transition-all"
-          >
-            {/* Minimalist Button Text */}
-            <span className="relative z-10 text-[11px] tracking-[1.5em] font-light ml-[1.5em] group-hover:text-white transition-colors duration-500">
-              探索全集
-            </span>
-            {/* Slide up fill */}
-            <div className="absolute inset-0 bg-[#1a1a1a] translate-y-full group-active:translate-y-0 group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
-            {/* Initial thin underline */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-[1px] bg-black/20 group-hover:w-full transition-all duration-500"></div>
-          </button>
+      {/* Bottom Action Area - Enhanced Visibility */}
+      <div className="relative z-20 pb-20 px-10 flex flex-col items-center">
+        
+        {/* The New CTA Button */}
+        <button 
+          onClick={onExplore}
+          className="group relative flex items-center justify-center bg-[#1a1a1a] text-white px-10 py-4 rounded-full overflow-hidden shadow-xl active:scale-95 transition-all duration-300"
+        >
+          {/* Visual Glimmer Effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
           
-          {/* Collection Metadata */}
-          <div className="mt-8 flex gap-4 opacity-10">
-             <span className="text-[7px] font-mono tracking-widest">Nikon Z9</span>
-             <span className="text-[7px] font-mono tracking-widest">85mm f/1.2</span>
-             <span className="text-[7px] font-mono tracking-widest">NATURAL LIGHT</span>
-          </div>
+          <span className="text-[11px] tracking-[0.8em] font-light ml-[0.8em] uppercase">
+            探索全集
+          </span>
+          
+          <svg className="w-4 h-4 ml-1 opacity-60 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+        {/* Dynamic Visual Cue */}
+        <div className="mt-8 flex flex-col items-center opacity-30">
+           <div className="w-[1px] h-8 bg-gradient-to-b from-black to-transparent animate-[scrollIndicator_2s_infinite]"></div>
+           <style>{`
+             @keyframes scrollIndicator {
+               0% { height: 0; opacity: 0; transform: translateY(-10px); }
+               50% { height: 20px; opacity: 1; transform: translateY(0); }
+               100% { height: 0; opacity: 0; transform: translateY(10px); }
+             }
+           `}</style>
+           <span className="text-[6px] tracking-[0.4em] uppercase mt-2">Enter Gallery</span>
+        </div>
+
+        {/* Meta Info */}
+        <div className="mt-6 flex gap-6 opacity-[0.08]">
+           <span className="text-[7px] font-mono tracking-widest uppercase">Portfolio</span>
+           <span className="text-[7px] font-mono tracking-widest uppercase">Archive</span>
+           <span className="text-[7px] font-mono tracking-widest uppercase">Contact</span>
         </div>
       </div>
 
-      {/* Floating Corner Decor */}
-      <div className="absolute top-0 right-0 p-8 pointer-events-none opacity-20">
-        <div className="text-[8px] font-mono [writing-mode:vertical-rl] tracking-widest text-black">
-          PAGE_01 // THE_ART_OF_SEEING
+      {/* Floating Side Text */}
+      <div className="absolute top-1/2 -right-4 -translate-y-1/2 pointer-events-none opacity-10">
+        <div className="text-[8px] font-mono [writing-mode:vertical-rl] tracking-[0.5em] text-black">
+          THE ART OF CAPTURING SOUL // 2025
         </div>
       </div>
     </div>
