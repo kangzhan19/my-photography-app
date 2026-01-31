@@ -124,10 +124,7 @@ const GalleryPage: React.FC<GalleryPageProps> = ({ albums, onAlbumClick, selecte
                     className="w-full h-full object-cover transition-transform duration-[3s] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-105"
                     loading="lazy"
                   />
-                  {/* Subtle glass effect label */}
-                  <div className="absolute top-3 right-3 bg-white/20 backdrop-blur-md px-2 py-1 rounded-full border border-white/30">
-                    <span className="text-[7px] text-white font-mono tracking-tighter">HD VIEW</span>
-                  </div>
+                  {/* 已移除 HD VIEW 标签，确保封面图片展示完整 */}
                 </div>
                 
                 <div className="mt-5 px-1 space-y-1.5">

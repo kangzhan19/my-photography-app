@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 
 interface HomePageProps {
@@ -8,6 +9,9 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ onSecretEntry, onExplore }) => {
   const [clickCount, setClickCount] = useState(0);
   const timerRef = useRef<number | null>(null);
+
+  // 封面大片：铺满全屏
+  const COVER_IMAGE = "https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/5%20%283%29.jpg";
 
   const handleSecretTrigger = () => {
     setClickCount(prev => prev + 1);
@@ -21,114 +25,106 @@ const HomePage: React.FC<HomePageProps> = ({ onSecretEntry, onExplore }) => {
   };
 
   return (
-    <div className="relative h-screen w-full bg-white overflow-hidden flex flex-col font-sans text-[#1a1a1a]">
-      {/* 细腻背景纹理 */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-10" 
-           style={{ backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`, backgroundSize: '30px 30px' }}>
+    <div className="relative h-screen w-full overflow-hidden bg-black flex flex-col font-sans">
+      
+      {/* 全屏背景图 - 电影感缩放动画 */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={COVER_IMAGE} 
+          className="w-full h-full object-cover animate-ken-burns"
+          alt="Cover Masterpiece"
+        />
+        {/* 精细调色遮罩 */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent via-50% to-black/70 pointer-events-none"></div>
+        {/* 胶片颗粒纹理 */}
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       </div>
 
-      {/* 顶部品牌 */}
-      <div className="relative z-20 pt-16 px-10 flex justify-between items-start animate-fade-in">
-        <div className="flex flex-col gap-2">
-          <h1 
-            onClick={handleSecretTrigger}
-            className="text-[16px] tracking-[1em] font-light uppercase active:opacity-50 transition-opacity cursor-pointer leading-none"
-          >
-            BEAUTIFY
-          </h1>
-          <div className="w-12 h-[1px] bg-black"></div>
-          <span className="text-[7px] tracking-[0.4em] text-black/30 font-mono mt-1 uppercase">DeYang Premiere Studio</span>
-        </div>
-        <div className="text-right">
-          <span className="text-[10px] tracking-[0.2em] font-light text-black/20 italic uppercase">EST. 2018</span>
-        </div>
+      {/* 顶部状态 */}
+      <div className="relative z-20 pt-8 px-8 flex justify-between items-center animate-fade-in opacity-40">
+        <span className="text-[6px] tracking-[0.6em] text-white font-mono uppercase">Fine Art Archive</span>
+        <div className="w-6 h-[0.5px] bg-white/50"></div>
+        <span className="text-[6px] tracking-[0.6em] text-white font-mono uppercase">Series 2025</span>
       </div>
 
-      {/* 主展示区 - 横屏视频展示 */}
-      <div className="relative flex-1 flex flex-col items-center justify-center px-6 z-20">
-        <div className="relative w-full max-w-[400px] flex flex-col items-center group">
+      {/* 中间 LOGO 区 - 完整品牌展示 (优化间距) */}
+      <div className="relative flex-1 flex flex-col items-center justify-center z-10 px-6">
+        <div 
+          onClick={handleSecretTrigger}
+          className="flex flex-col items-center cursor-pointer active:scale-95 transition-all duration-700"
+        >
+          {/* 完整品牌 LOGO：beautify写真工作室 - 缩减了间距确保展示完整 */}
+          <div className="flex flex-col items-center gap-1">
+            <h1 className="text-[34px] md:text-[42px] tracking-[0.5em] font-extralight text-white uppercase ml-[0.5em] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] leading-tight">
+              beautify
+            </h1>
+            <h2 className="text-[11px] tracking-[0.8em] font-light text-white/90 ml-[0.8em] uppercase drop-shadow-lg">
+              写真工作室
+            </h2>
+          </div>
           
-          {/* 视频容器：采用 aspect-video (16:9) 适配横屏视频，使用 object-contain 确保不缩放变形 */}
-          <div className="relative w-full aspect-video overflow-hidden bg-black rounded-2xl shadow-[0_50px_100px_rgba(0,0,0,0.12)] border border-black/5 group-hover:scale-[1.01] transition-transform duration-1000">
-            <video 
-              src="https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/%EA%BA%97%EA%86%85%EA%B3%86%EA%BA%91.mp4"
-              className="w-full h-full object-contain"
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-            />
-            {/* 极简玻璃遮罩层 */}
-            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none"></div>
+          {/* 极简底部装饰：一个呼吸的焦点 */}
+          <div className="mt-8 relative">
+            <div className="w-1 h-1 bg-white/40 rounded-full animate-ping"></div>
+            <div className="absolute inset-0 w-1 h-1 bg-white/60 rounded-full"></div>
           </div>
+        </div>
 
-          {/* 文字点缀 */}
-          <div className="mt-12 flex flex-col items-center text-center animate-fade-in-up delay-300">
-            <h2 className="text-[18px] font-serif tracking-[0.6em] text-black/90 font-medium">瞬间的永恒</h2>
-            <div className="mt-4 flex items-center gap-4 opacity-20">
-              <div className="w-8 h-[1px] bg-black"></div>
-              <span className="text-[8px] tracking-[0.4em] font-mono uppercase">Series 01 / Cinematic</span>
-              <div className="w-8 h-[1px] bg-black"></div>
-            </div>
-          </div>
+        {/* 视觉引导文案 */}
+        <div className="absolute bottom-1/4 flex flex-col items-center animate-fade-in delay-500">
+          <p className="text-[13px] font-serif italic text-white/80 tracking-[0.3em] font-light">捕捉灵魂深处的纯净光影</p>
         </div>
       </div>
 
-      {/* 底部按钮区 - 诱导点击增强 */}
-      <div className="relative z-30 pb-28 px-10 flex flex-col items-center">
+      {/* 底部交互区 - 磨砂流光胶囊按钮 */}
+      <div className="relative z-30 pb-24 px-8 flex flex-col items-center">
         
-        {/* 高亮“探索全集”按钮 */}
         <button 
           onClick={onExplore}
-          className="group relative flex items-center justify-center bg-black text-white w-full max-w-[280px] py-6 rounded-full overflow-hidden transition-all duration-700 hover:shadow-[0_30px_60px_rgba(0,0,0,0.4)] active:scale-95 animate-pulse-slow"
+          className="group relative w-full max-w-[280px] h-[72px] flex items-center justify-center rounded-full overflow-hidden transition-all duration-700 active:scale-95 shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
         >
-          {/* Shimmer 光效 */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+          {/* 极致磨砂背板 */}
+          <div className="absolute inset-0 bg-white/15 backdrop-blur-2xl border border-white/20 group-hover:bg-white/25 transition-all"></div>
           
-          {/* 底部扩散阴影补足 */}
-          <div className="absolute -inset-1 bg-white/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-lg"></div>
-
-          <span className="relative z-10 text-[13px] tracking-[0.8em] font-bold ml-[0.8em] uppercase">
-            探索全集
-          </span>
+          {/* 按钮内部动态流光 */}
+          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[2s] ease-in-out bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
           
-          <div className="relative z-10 w-5 h-5 ml-2 group-hover:translate-x-3 transition-transform duration-500 ease-out">
-            <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+          <div className="relative z-10 flex items-center justify-center gap-4">
+            <span className="text-[16px] tracking-[1.2em] font-bold text-white ml-[1.2em] uppercase">探索全集</span>
+            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20 transition-all duration-500 group-hover:translate-x-3 group-hover:bg-white text-white group-hover:text-black shadow-lg">
+               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                  <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round"/>
+               </svg>
+            </div>
           </div>
         </button>
 
-        {/* 动态引导 */}
+        {/* 交互提示 */}
         <div className="mt-12 flex flex-col items-center opacity-30 group cursor-pointer" onClick={onExplore}>
-           <div className="w-[1.5px] h-8 bg-black origin-top animate-expand-line"></div>
-           <span className="text-[7px] tracking-[0.6em] uppercase mt-5 font-bold text-black group-hover:tracking-[0.8em] transition-all duration-500">Enter Gallery</span>
-        </div>
-
-        <style>{`
-          @keyframes expand-line {
-            0%, 100% { transform: scaleY(0.4); opacity: 0.5; }
-            50% { transform: scaleY(1); opacity: 1; }
-          }
-          .animate-expand-line {
-            animation: expand-line 3s infinite ease-in-out;
-          }
-          @keyframes pulse-slow {
-            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-            50% { transform: scale(1.02); box-shadow: 0 20px 50px rgba(0,0,0,0.25); }
-          }
-          .animate-pulse-slow {
-            animation: pulse-slow 4s infinite ease-in-out;
-          }
-        `}</style>
-      </div>
-
-      {/* 竖排边栏美学文字 */}
-      <div className="absolute top-1/2 left-4 -translate-y-1/2 pointer-events-none opacity-[0.05] z-10">
-        <div className="text-[10px] font-serif [writing-mode:vertical-rl] tracking-[1.5em] text-black">
-          THE ART OF STORYTELLING THROUGH LIGHT
+           <div className="relative w-[1px] h-10 bg-white/40 overflow-hidden">
+              <div className="absolute top-0 w-full h-1/2 bg-white animate-scroll-line"></div>
+           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes ken-burns {
+          0% { transform: scale(1); }
+          100% { transform: scale(1.15); }
+        }
+        .animate-ken-burns {
+          animation: ken-burns 30s ease-in-out infinite alternate;
+        }
+        
+        @keyframes scroll-line {
+          0% { transform: translateY(-100%); opacity: 0; }
+          50% { opacity: 1; }
+          100% { transform: translateY(200%); opacity: 0; }
+        }
+        .animate-scroll-line {
+          animation: scroll-line 3s infinite ease-in-out;
+        }
+      `}</style>
     </div>
   );
 };
