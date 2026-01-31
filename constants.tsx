@@ -372,6 +372,70 @@ export const DEFAULT_ALBUMS: Album[] = [
       { id: 'p28-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/25%20%283%29.jpg' },
       { id: 'p28-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/25%20%284%29.jpg' }
     ]
+  },
+  {
+    id: 'a29',
+    title: '鎏光蜜语',
+    categoryId: '12', // 分类至星河共赴
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/26%20%281%29.jpg',
+    photos: [
+      { id: 'p29-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/26%20%281%29.jpg' },
+      { id: 'p29-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/26%20%282%29.jpg' },
+      { id: 'p29-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/26%20%284%29.jpg' },
+      { id: 'p29-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/26%20%285%29.jpg' }
+    ]
+  },
+  {
+    id: 'a30',
+    title: '粉漾恋歌',
+    categoryId: '12', // 分类至星河共赴
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/27%20%281%29.jpg',
+    photos: [
+      { id: 'p30-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/27%20%281%29.jpg' },
+      { id: 'p30-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/27%20%282%29.jpg' },
+      { id: 'p30-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/27%20%283%29.jpg' },
+      { id: 'p30-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/27%20%284%29.jpg' },
+      { id: 'p30-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/27%20%285%29.jpg' }
+    ]
+  },
+  {
+    id: 'a31',
+    title: '花嫁心事',
+    categoryId: '12', // 分类至星河共赴
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/28%20%281%29.jpg',
+    photos: [
+      { id: 'p31-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/28%20%281%29.jpg' },
+      { id: 'p31-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/28%20%282%29.jpg' },
+      { id: 'p31-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/28%20%283%29.jpg' },
+      { id: 'p31-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/28%20%284%29.jpg' },
+      { id: 'p31-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/28%20%285%29.jpg' },
+      { id: 'p31-6', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/28%20%286%29.jpg' }
+    ]
+  },
+  {
+    id: 'a32',
+    title: '元气告白',
+    categoryId: '12', // 分类至星河共赴
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/29%20%281%29.jpg',
+    photos: [
+      { id: 'p32-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/29%20%281%29.jpg' },
+      { id: 'p32-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/29%20%2810%29.jpg' },
+      { id: 'p32-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/29%20%282%29.jpg' },
+      { id: 'p32-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/29%20%287%29.jpg' },
+      { id: 'p32-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/29%20%288%29.jpg' }
+    ]
+  },
+  {
+    id: 'a33',
+    title: '莓好少女',
+    categoryId: '6', // 分类至花漾生日
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/30%20%282%29.jpg',
+    photos: [
+      { id: 'p33-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/30%20%282%29.jpg' },
+      { id: 'p33-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/30%20%282%29.jpg' },
+      { id: 'p33-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/30%20%283%29.jpg' },
+      { id: 'p33-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/30%20%285%29.jpg' }
+    ]
   }
 ];
 
