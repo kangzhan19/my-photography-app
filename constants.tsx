@@ -335,6 +335,43 @@ export const DEFAULT_ALBUMS: Album[] = [
       { id: 'p25-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/22%20%282%29.jpg' },
       { id: 'p25-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/22%20%283%29.jpg' }
     ]
+  },
+  {
+    id: 'a26',
+    title: '黑裙恋曲',
+    categoryId: '12', // 星河共赴
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/23%20%281%29.jpg',
+    photos: [
+      { id: 'p26-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/23%20%281%29.jpg' },
+      { id: 'p26-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/23%20%282%29.jpg' },
+      { id: 'p26-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/23%20%283%29.jpg' },
+      { id: 'p26-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/23%20%284%29.jpg' },
+      { id: 'p26-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/23%20%286%29.jpg' }
+    ]
+  },
+  {
+    id: 'a27',
+    title: '奶白恋歌',
+    categoryId: '12', // 星河共赴
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/24%20%281%29.jpg',
+    photos: [
+      { id: 'p27-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/24%20%281%29.jpg' },
+      { id: 'p27-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/24%20%282%29.jpg' },
+      { id: 'p27-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/24%20%283%29.jpg' },
+      { id: 'p27-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/24%20%285%29.jpg' }
+    ]
+  },
+  {
+    id: 'a28',
+    title: '青春序章',
+    categoryId: '12', // 已分类到星河共赴
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/25%20%281%29.jpg',
+    photos: [
+      { id: 'p28-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/25%20%281%29.jpg' },
+      { id: 'p28-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/25%20%282%29.jpg' },
+      { id: 'p28-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/25%20%283%29.jpg' },
+      { id: 'p28-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/25%20%284%29.jpg' }
+    ]
   }
 ];
 
@@ -345,8 +382,23 @@ export const ICONS = {
     </svg>
   ),
   GALLERY: (active: boolean) => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill={active ? "black" : "none"} viewBox="0 0 24 24" stroke="black" strokeWidth={active ? 1 : 1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.244 2.077a2.25 2.244 2.077 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.244 2.077a2.25 2.244 2.077 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="black" strokeWidth={active ? 1.5 : 1.2}>
+      {/* Background Photo Frame */}
+      <rect x="7" y="4" width="13" height="13" rx="2" strokeDasharray={active ? "" : "2 2"} className="opacity-40" />
+      {/* Foreground Photo Frame */}
+      <rect x="4" y="7" width="13" height="13" rx="2" fill={active ? "black" : "none"} />
+      {/* Internal Details for Foreground Frame */}
+      {!active ? (
+        <>
+          <circle cx="7.5" cy="10.5" r="1.5" />
+          <path d="M4 17l3-3 2 2 4-4 4 4" strokeLinecap="round" strokeLinejoin="round" />
+        </>
+      ) : (
+        <>
+          <circle cx="7.5" cy="10.5" r="1.5" fill="white" stroke="none" />
+          <path d="M4 17l3-3 2 2 4-4 4 4" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+        </>
+      )}
     </svg>
   ),
   BACK: (

@@ -10,21 +10,17 @@ interface GalleryPageProps {
   onCategoryChange: (id: string) => void;
 }
 
-// 为分类添加英文副标题，增加国际化高级感
-const CATEGORY_EN_MAP: Record<string, string> = {
-  '1': 'ALL WORKS',
-  '2': 'PURE',
-  '3': 'STARRY',
-  '4': 'ANCIENT',
-  '5': 'LIGHT',
-  '6': 'BIRTHDAY',
-  '7': 'FACE',
-  '8': 'CHIC',
-  '9': 'TREND',
-  '10': 'ID',
-  '11': 'MAN',
-  '12': 'GALAXY',
-  '13': 'ECHO',
+// 对应 ID 的专用小图标设计
+const CATEGORY_ICON_MAP: Record<string, React.ReactNode> = {
+  '1': <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>, // 全部
+  '2': <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>, // 纯漾
+  '3': <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>, // 星芒
+  '4': <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/></svg>, // 古意
+  '5': <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="8" r="5"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg>, // 肖像
+  '6': <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7c2.5-2.5 5-2.5 5 0s-2.5 5-5 5-5-2.5-5-5 2.5-2.5 5 0z"/></svg>, // 生日
+  '7': <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>, // 繁花
+  '8': <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>, // 国潮
+  '12': <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>, // 星河
 };
 
 const GalleryPage: React.FC<GalleryPageProps> = ({ albums, onAlbumClick, selectedCategoryId, onCategoryChange }) => {
@@ -34,11 +30,11 @@ const GalleryPage: React.FC<GalleryPageProps> = ({ albums, onAlbumClick, selecte
   }, [selectedCategoryId, albums]);
 
   return (
-    <div className="flex min-h-screen bg-[#FDFDFD] pb-24">
-      {/* Sidebar Navigation - Now part of global scroll */}
-      <div className="w-[85px] flex-shrink-0 bg-gray-50/50 border-r border-gray-100 flex flex-col pt-6 shadow-[inset_-1px_0_0_rgba(0,0,0,0.05)]">
-        <div className="px-2 space-y-4">
-          {CATEGORIES.map(cat => {
+    <div className="flex min-h-screen bg-white pb-24">
+      {/* 强化版侧边栏 - 宽度调优，增强可见性 */}
+      <div className="w-[68px] flex-shrink-0 bg-[#f7f7f7] border-r border-gray-200 flex flex-col pt-12 sticky top-0 h-screen overflow-y-auto hide-scrollbar">
+        <div className="flex flex-col items-center">
+          {CATEGORIES.map((cat, idx) => {
             const isActive = selectedCategoryId === cat.id;
             return (
               <button
@@ -47,109 +43,114 @@ const GalleryPage: React.FC<GalleryPageProps> = ({ albums, onAlbumClick, selecte
                   onCategoryChange(cat.id);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className={`w-full py-6 flex flex-col items-center justify-center transition-all duration-300 rounded-[20px] relative group ${
-                  isActive 
-                    ? 'bg-white shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)] scale-100 ring-1 ring-black/5' 
-                    : 'bg-transparent scale-90 hover:scale-95 opacity-40 hover:opacity-100'
+                className={`w-full py-7 flex flex-col items-center justify-center transition-all duration-300 relative group ${
+                  isActive ? 'bg-white shadow-[inset_-4px_0_10px_rgba(0,0,0,0.02)]' : 'hover:bg-black/[0.02]'
                 }`}
               >
-                {/* Active Indicator Dot */}
-                {isActive && (
-                  <div className="absolute top-2 w-1 h-1 bg-black rounded-full animate-pulse"></div>
-                )}
+                {/* 状态指示线：加厚至 3px，更清晰 */}
+                <div 
+                  className={`absolute left-0 w-[3px] bg-black rounded-r-full transition-all duration-500 ease-in-out ${
+                    isActive ? 'h-12 opacity-100' : 'h-0 opacity-0'
+                  }`}
+                />
                 
-                {/* Category Text - Vertical & Refined */}
-                <span className={`text-[12px] [writing-mode:vertical-rl] tracking-[0.35em] transition-all duration-300 font-medium ${
-                  isActive ? 'text-black' : 'text-gray-400'
+                {/* 辅助图标：解决纯文字不显眼的问题 */}
+                <div className={`mb-3 transition-all duration-300 ${
+                  isActive ? 'text-black scale-110' : 'text-gray-400 group-hover:text-gray-600'
+                }`}>
+                  {CATEGORY_ICON_MAP[cat.id] || <div className="w-1.5 h-1.5 rounded-full border border-current" />}
+                </div>
+
+                {/* 分类文字：提高对比度 */}
+                <span className={`text-[12px] [writing-mode:vertical-rl] tracking-[0.4em] transition-all duration-300 ${
+                  isActive 
+                    ? 'text-black font-bold' 
+                    : 'text-gray-500 group-hover:text-gray-700'
                 }`}>
                   {cat.name}
                 </span>
 
-                {/* English Tag */}
-                <div className={`mt-2 transition-all duration-500 overflow-hidden ${isActive ? 'max-h-4 opacity-100' : 'max-h-0 opacity-0'}`}>
-                   <span className="text-[5px] font-mono text-black/20 uppercase tracking-tighter">
-                     {CATEGORY_EN_MAP[cat.id]}
-                   </span>
-                </div>
-
-                {/* Hover Glow Effect */}
-                {!isActive && (
-                   <div className="absolute inset-0 bg-black/[0.02] rounded-[20px] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                {/* 极小点缀 - 提示还有更多细节 */}
+                {isActive && (
+                  <div className="mt-2 w-[2px] h-[2px] bg-black/40 rounded-full animate-pulse"></div>
                 )}
               </button>
             );
           })}
         </div>
+        
+        {/* 底部装饰占位 */}
+        <div className="mt-auto py-10 flex flex-col items-center opacity-10">
+           <div className="w-[1px] h-10 bg-black"></div>
+           <span className="text-[7px] [writing-mode:vertical-rl] tracking-widest mt-4">PAGE BOTTOM</span>
+        </div>
+        <div className="h-20 flex-shrink-0" />
       </div>
 
-      {/* Main Content Area - Synchronized Scroll */}
+      {/* 主展示区 */}
       <div className="flex-1 flex flex-col bg-white">
-        <header className="px-6 py-6 border-b border-gray-50 flex justify-between items-end bg-white">
+        <header className="px-6 py-10 flex justify-between items-end border-b border-gray-50">
           <div className="flex flex-col">
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-              <span className="text-[10px] font-mono tracking-widest text-black/20 uppercase">Category</span>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-[9px] font-mono tracking-[0.4em] text-black/30 uppercase">Selection</span>
+              <div className="flex-1 w-8 h-[1px] bg-black/5"></div>
             </div>
-            <h2 className="text-lg font-serif tracking-tight text-gray-900 leading-none">
+            <h2 className="text-2xl font-serif tracking-tight text-gray-900 leading-none">
               {CATEGORIES.find(c => c.id === selectedCategoryId)?.name}
             </h2>
           </div>
-          <div className="text-right flex flex-col items-end">
-             <span className="text-[20px] font-serif italic text-black/5 leading-none">#{CATEGORIES.findIndex(c => c.id === selectedCategoryId) + 1}</span>
-             <span className="text-[8px] font-mono tracking-widest text-black/30 uppercase mt-1">{CATEGORY_EN_MAP[selectedCategoryId]} SERIES</span>
+          <div className="flex flex-col items-end">
+             <span className="text-[28px] font-serif italic text-black/[0.04] leading-none mb-1">
+               {CATEGORIES.findIndex(c => c.id === selectedCategoryId) + 1 < 10 ? '0' : ''}
+               {CATEGORIES.findIndex(c => c.id === selectedCategoryId) + 1}
+             </span>
+             <span className="text-[7px] tracking-widest text-black/20 uppercase font-mono">Series Index</span>
           </div>
         </header>
 
-        <div className="px-5 py-6">
+        <div className="px-5 py-8">
           <div className="grid grid-cols-2 gap-x-5 gap-y-12">
             {filteredAlbums.map((album, idx) => (
               <div 
                 key={album.id} 
                 onClick={() => onAlbumClick(album)}
-                className={`group cursor-pointer transform transition-all duration-700 animate-fade-in`}
-                style={{ animationDelay: `${idx * 100}ms` }}
+                className="group cursor-pointer animate-fade-in"
+                style={{ animationDelay: `${idx * 80}ms` }}
               >
-                <div className="relative aspect-[3/4.2] overflow-hidden bg-gray-50 rounded-[24px] shadow-[0_15px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:shadow-[0_25px_55px_-12px_rgba(0,0,0,0.15)] group-hover:-translate-y-2">
+                <div className="relative aspect-[3/4.4] overflow-hidden bg-[#fdfdfd] rounded-3xl shadow-[0_15px_35px_-12px_rgba(0,0,0,0.08)] transition-all duration-700 group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] group-hover:-translate-y-1 border border-gray-50">
                   <img 
                     src={album.coverUrl} 
                     alt={album.title} 
-                    className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-[3s] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  
-                  {/* Overlay Info */}
-                  <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-2 group-hover:translate-y-0">
-                     <span className="text-[7px] text-white/60 bg-white/10 backdrop-blur-md px-2 py-1 rounded-full uppercase tracking-widest font-light">Beautify Studio</span>
+                  {/* Subtle glass effect label */}
+                  <div className="absolute top-3 right-3 bg-white/20 backdrop-blur-md px-2 py-1 rounded-full border border-white/30">
+                    <span className="text-[7px] text-white font-mono tracking-tighter">HD VIEW</span>
                   </div>
                 </div>
                 
-                <div className="mt-5 space-y-1 px-2">
-                  <h3 className="text-[12px] font-medium text-gray-900 truncate tracking-wide">
+                <div className="mt-5 px-1 space-y-1.5">
+                  <h3 className="text-[12px] font-bold text-gray-900 tracking-wider">
                     {album.title}
                   </h3>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-[1px] h-3 bg-black/10"></div>
-                      <span className="text-[9px] text-gray-400 font-mono tracking-tighter">
-                        {album.photos.length.toString().padStart(2, '0')} PHOTOS
-                      </span>
-                    </div>
-                    <div className="w-5 h-5 rounded-full border border-gray-100 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <svg className="w-2.5 h-2.5 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[9px] font-mono text-black/40">
+                      {album.photos.length.toString().padStart(2, '0')} P
+                    </span>
+                    <div className="w-4 h-[1px] bg-black/10"></div>
+                    <span className="text-[8px] font-light tracking-widest uppercase text-black/30">Style Archive</span>
                   </div>
                 </div>
               </div>
             ))}
             
             {filteredAlbums.length === 0 && (
-              <div className="col-span-2 py-40 flex flex-col items-center justify-center">
-                <div className="w-10 h-10 border border-black/5 rounded-full flex items-center justify-center mb-6">
-                  <div className="w-1.5 h-1.5 bg-black/10 rounded-full animate-ping"></div>
+              <div className="col-span-2 py-48 flex flex-col items-center justify-center">
+                <div className="w-12 h-12 border border-gray-100 rounded-full flex items-center justify-center animate-spin duration-[3000ms] mb-6">
+                   <div className="w-1 h-1 bg-black rounded-full"></div>
                 </div>
-                <p className="text-[9px] tracking-[0.6em] text-black/30 uppercase font-light">Curating Content</p>
-                <p className="text-[7px] tracking-[0.2em] text-black/10 mt-2">COMING SOON TO GALLERY</p>
+                <p className="text-[10px] tracking-[0.6em] uppercase font-light text-gray-300">Synchronizing Archive</p>
               </div>
             )}
           </div>
