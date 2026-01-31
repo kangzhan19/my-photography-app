@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Category, Album } from './types';
 
@@ -236,6 +235,105 @@ export const DEFAULT_ALBUMS: Album[] = [
       { id: 'p17-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/14%20%286%29.jpg' },
       { id: 'p17-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/14%20%287%29.jpg' },
       { id: 'p17-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/14%20%288%29.jpg' }
+    ]
+  },
+  {
+    id: 'a18',
+    title: '辣妹出逃',
+    categoryId: '2', // 纯漾轻欲
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/15%20%282%29.jpg',
+    photos: [
+      { id: 'p18-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/15%20%282%29.jpg' },
+      { id: 'p18-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/15%20%283%29.jpg' },
+      { id: 'p18-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/15%20%286%29.jpg' },
+      { id: 'p18-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/15%20%289%29.jpg' }
+    ]
+  },
+  {
+    id: 'a19',
+    title: '白枝静语',
+    categoryId: '8', // 国潮新韵
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/16%20%281%29.jpg',
+    photos: [
+      { id: 'p19-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/16%20%281%29.jpg' },
+      { id: 'p19-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/16%20%282%29.jpg' },
+      { id: 'p19-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/16%20%284%29.jpg' },
+      { id: 'p19-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/16%20%285%29.jpg' },
+      { id: 'p19-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/16%20%287%29.jpg' }
+    ]
+  },
+  {
+    id: 'a20',
+    title: '浅灰私语',
+    categoryId: '2', // 纯漾轻欲
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/17%20%281%29.jpg',
+    photos: [
+      { id: 'p20-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/17%20%281%29.jpg' },
+      { id: 'p20-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/17%20%283%29.jpg' },
+      { id: 'p20-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/17%20%285%29.jpg' },
+      { id: 'p20-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/17%20%286%29.jpg' }
+    ]
+  },
+  {
+    id: 'a21',
+    title: '午夜迷航',
+    categoryId: '3', // 星芒定格
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/18%20%283%29.jpg',
+    photos: [
+      { id: 'p21-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/18%20%283%29.jpg' },
+      { id: 'p21-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/18%20%282%29.jpg' },
+      { id: 'p21-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/18%20%284%29.jpg' },
+      { id: 'p21-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/18%20%285%29.jpg' },
+      { id: 'p21-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/18%20%286%29.jpg' }
+    ]
+  },
+  {
+    id: 'a22',
+    title: '赤焰车影',
+    categoryId: '3', // 星芒定格
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/19%20%281%29.jpg',
+    photos: [
+      { id: 'p22-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/19%20%281%29.jpg' },
+      { id: 'p22-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/19%20%284%29.jpg' },
+      { id: 'p22-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/19%20%283%29.jpg' },
+      { id: 'p22-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/19%20%286%29.jpg' }
+    ]
+  },
+  {
+    id: 'a23',
+    title: '夜车私语',
+    categoryId: '3', // 星芒定格
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/20%20%281%29.jpg',
+    photos: [
+      { id: 'p23-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/20%20%281%29.jpg' },
+      { id: 'p23-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/20%20%282%29.jpg' },
+      { id: 'p23-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/20%20%284%29.jpg' },
+      { id: 'p23-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/20%20%285%29.jpg' },
+      { id: 'p23-5', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/20%20%287%29.jpg' }
+    ]
+  },
+  {
+    id: 'a24',
+    title: '绯色许愿',
+    categoryId: '6', // 花漾生日
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/21%20%281%29.jpg',
+    photos: [
+      { id: 'p24-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/21%20%281%29.jpg' },
+      { id: 'p24-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/21%20%282%29.jpg' },
+      { id: 'p24-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/21%20%284%29.jpg' },
+      { id: 'p24-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/21%20%285%29.jpg' }
+    ]
+  },
+  {
+    id: 'a25',
+    title: '豪门夜色',
+    categoryId: '3', // 星芒定格
+    coverUrl: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/22%20%286%29.jpg',
+    photos: [
+      { id: 'p25-1', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/22%20%286%29.jpg' },
+      { id: 'p25-2', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/22%20%281%29.jpg' },
+      { id: 'p25-3', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/22%20%282%29.jpg' },
+      { id: 'p25-4', url: 'https://beautifystudio-1301730494.cos.ap-guangzhou.myqcloud.com/beautify%E6%91%84%E5%BD%B1/beautify2/22%20%283%29.jpg' }
     ]
   }
 ];

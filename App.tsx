@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import HomePage from './components/HomePage';
 import GalleryPage from './components/GalleryPage';
@@ -8,8 +7,8 @@ import TabBar from './components/TabBar';
 import { ViewType, Album } from './types';
 import { DEFAULT_ALBUMS, CATEGORIES } from './constants';
 
-// 更新版本后缀以强制同步代码中的最新 DEFAULT_ALBUMS (V31)
-const LOCAL_STORAGE_KEY = 'BEAUTIFY_ALBUMS_V31_STABLE_CODE';
+// 更新版本后缀以强制同步代码中的最新 DEFAULT_ALBUMS (V40)
+const LOCAL_STORAGE_KEY = 'BEAUTIFY_ALBUMS_V40_STABLE_CODE';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ViewType>('HOME');

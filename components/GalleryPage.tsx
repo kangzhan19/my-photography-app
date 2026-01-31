@@ -34,16 +34,19 @@ const GalleryPage: React.FC<GalleryPageProps> = ({ albums, onAlbumClick, selecte
   }, [selectedCategoryId, albums]);
 
   return (
-    <div className="flex h-screen bg-[#FDFDFD] pb-16 overflow-hidden">
-      {/* Sidebar Navigation - Tactile Button Design */}
+    <div className="flex min-h-screen bg-[#FDFDFD] pb-24">
+      {/* Sidebar Navigation - Now part of global scroll */}
       <div className="w-[85px] flex-shrink-0 bg-gray-50/50 border-r border-gray-100 flex flex-col pt-6 shadow-[inset_-1px_0_0_rgba(0,0,0,0.05)]">
-        <div className="flex-1 overflow-y-auto hide-scrollbar px-2 space-y-4">
+        <div className="px-2 space-y-4">
           {CATEGORIES.map(cat => {
             const isActive = selectedCategoryId === cat.id;
             return (
               <button
                 key={cat.id}
-                onClick={() => onCategoryChange(cat.id)}
+                onClick={() => {
+                  onCategoryChange(cat.id);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 className={`w-full py-6 flex flex-col items-center justify-center transition-all duration-300 rounded-[20px] relative group ${
                   isActive 
                     ? 'bg-white shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)] scale-100 ring-1 ring-black/5' 
@@ -62,7 +65,7 @@ const GalleryPage: React.FC<GalleryPageProps> = ({ albums, onAlbumClick, selecte
                   {cat.name}
                 </span>
 
-                {/* English Tag - Extra small design element */}
+                {/* English Tag */}
                 <div className={`mt-2 transition-all duration-500 overflow-hidden ${isActive ? 'max-h-4 opacity-100' : 'max-h-0 opacity-0'}`}>
                    <span className="text-[5px] font-mono text-black/20 uppercase tracking-tighter">
                      {CATEGORY_EN_MAP[cat.id]}
@@ -79,9 +82,9 @@ const GalleryPage: React.FC<GalleryPageProps> = ({ albums, onAlbumClick, selecte
         </div>
       </div>
 
-      {/* Main Content Area */}
+      {/* Main Content Area - Synchronized Scroll */}
       <div className="flex-1 flex flex-col bg-white">
-        <header className="px-6 py-6 border-b border-gray-50 flex justify-between items-end bg-white/95 backdrop-blur-sm sticky top-0 z-10">
+        <header className="px-6 py-6 border-b border-gray-50 flex justify-between items-end bg-white">
           <div className="flex flex-col">
             <div className="flex items-center gap-2 mb-1">
               <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
@@ -97,8 +100,8 @@ const GalleryPage: React.FC<GalleryPageProps> = ({ albums, onAlbumClick, selecte
           </div>
         </header>
 
-        <div className="flex-1 overflow-y-auto px-5 py-6 scroll-smooth">
-          <div className="grid grid-cols-2 gap-x-5 gap-y-12 pb-32">
+        <div className="px-5 py-6">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-12">
             {filteredAlbums.map((album, idx) => (
               <div 
                 key={album.id} 
